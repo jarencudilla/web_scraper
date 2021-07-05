@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Item name:</strong>
+  <%= @product.item_name %>
+</p>
+
+<p>
+  <strong>Item image:</strong>
+  <%= @product.item_image %>
+</p>
+
+<p>
+  <strong>Item rating:</strong>
+  <%= @product.item_rating %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @product.price %>
+</p>
+
+<p>
+  <strong>Store:</strong>
+  <%= @product.store %>
+</p>
+
+<p>
+  <strong>Item description:</strong>
+  <%= @product.item_description %>
+</p>
+
+<p>
+  <strong>Item brand:</strong>
+  <%= @product.item_brand %>
+</p>
+
+<p>
+  <strong>Item model:</strong>
+  <%= @product.item_model %>
+</p>
+
+<p>
+  <strong>Sku:</strong>
+  <%= @product.sku %>
+</p>
+
+<p>
+  <strong>Display size:</strong>
+  <%= @product.display_size %>
+</p>
+
+<p>
+  <strong>Processor type:</strong>
+  <%= @product.Processor_type %>
+</p>
+
+<p>
+  <strong>Model:</strong>
+  <%= @product.model %>
+</p>
+
+<p>
+  <strong>Warranty:</strong>
+  <%= @product.warranty %>
+</p>
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>
