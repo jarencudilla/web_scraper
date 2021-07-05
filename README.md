@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[WIP]Lazada and Shopee web scraper app (personal project)
 
-Things you may want to cover:
+Hi, This is a personal project. A web scraping app tailored for Lazada and Shopee sites.
+This is in preparation for a price list website that I'm planning to build that is for the practical Filipino consumers.
 
 * Ruby version
+Ruby 3.0.1
+Rails 6.1.4
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Gems
+gem 'kimurai'
