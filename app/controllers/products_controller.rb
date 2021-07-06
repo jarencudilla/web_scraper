@@ -1,14 +1,27 @@
+# frozen_string_literal: true
+
 class ProductsController < ApplicationController
-  before_action :set_product, only: %i[ show edit update destroy ]
+  before_action :set_product, only: %i[show edit update destroy]
 
   # GET /products or /products.json
   def index
     @products = Product.all
   end
 
-  # GET /products/1 or /products/1.json
-  def show
+  def scrape
+    url = 'https://www.lazada.com.ph/shop-laptops/?sort=pricedesc&service=OS&rating=5'
+    response = ProductsSpider.process(url)
+    if response[:status] == :completed && response[:error].nil?
+      flash.now[:notice] = 'Successfully scraped url'
+    else
+      flash.now[:alert] = response[:error]
+    end
+  rescue StandardError => e
+    flash.now[:alert] = "Error: #{e}"
   end
+
+  # GET /products/1 or /products/1.json
+  def show; end
 
   # GET /products/new
   def new
@@ -16,8 +29,7 @@ class ProductsController < ApplicationController
   end
 
   # GET /products/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /products or /products.json
   def create
@@ -25,7 +37,7 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.save
-        format.html { redirect_to @product, notice: "Product was successfully created." }
+        format.html { redirect_to @product, notice: 'Product was successfully created.' }
         format.json { render :show, status: :created, location: @product }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +50,7 @@ class ProductsController < ApplicationController
   def update
     respond_to do |format|
       if @product.update(product_params)
-        format.html { redirect_to @product, notice: "Product was successfully updated." }
+        format.html { redirect_to @product, notice: 'Product was successfully updated.' }
         format.json { render :show, status: :ok, location: @product }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -51,19 +63,21 @@ class ProductsController < ApplicationController
   def destroy
     @product.destroy
     respond_to do |format|
-      format.html { redirect_to products_url, notice: "Product was successfully destroyed." }
+      format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_product
-      @product = Product.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def product_params
-      params.require(:product).permit(:item_name, :item_image, :item_rating, :price, :store, :item_description, :item_brand, :item_model, :sku, :display_size, :Processor_type, :model, :warranty)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_product
+    @product = Product.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def product_params
+    params.require(:product).permit(:item_name, :item_image, :item_rating, :price, :store, :item_description,
+                                    :item_brand, :item_model, :sku, :display_size, :Processor_type, :model, :warranty)
+  end
 end
