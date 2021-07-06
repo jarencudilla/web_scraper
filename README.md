@@ -7,7 +7,17 @@ This is in preparation for a price list website that I'm planning to build that 
 
 * Ruby version
 Ruby 3.0.1
+
+* Rails version
+
 Rails 6.1.4
+
+* Node version
+Node 16.3.0
+
+* Yarn version
+
+Yarn 1.22.10
 
 * Gems
 gem 'kimurai'
