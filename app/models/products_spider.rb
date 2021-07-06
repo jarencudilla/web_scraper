@@ -8,7 +8,7 @@ class ProductsSpider < Kimurai::Base
   end
 
   def parse(response, url:, data: {})
-    response.xpath("I should put a URL here? i think").each do |vehicle|
+    response.xpath("I should put a URL here? i think").each do |product|
       item = {}
 
      
