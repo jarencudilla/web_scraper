@@ -11,8 +11,6 @@ class ProductsSpider < Kimurai::Base
     response.xpath("I should put a URL here? i think").each do |product|
       item = {}
 
-     
-
       Product.where(item).first_or_create
     end
   end
