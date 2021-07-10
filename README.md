@@ -6,6 +6,7 @@ Hi, This is a personal project. A web scraping app tailored for Lazada and Shope
 This is in preparation for a price list website that I'm planning to build that is for the practical Filipino consumers.
 
 * Ruby version
+
 Ruby 3.0.1
 
 * Rails version
@@ -13,6 +14,7 @@ Ruby 3.0.1
 Rails 6.1.4
 
 * Node version
+
 Node 16.3.0
 
 * Yarn version
@@ -20,4 +22,5 @@ Node 16.3.0
 Yarn 1.22.10
 
 * Gems
+
 gem 'kimurai'
