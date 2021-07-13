@@ -27,6 +27,10 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+gem 'kimurai'
+gem 'open-uri'
+gem 'rexml', '~> 3.2', '>= 3.2.4'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
@@ -46,9 +50,5 @@ group :development do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'kimurai'
-gem 'open-uri'
-gem 'rexml', '~> 3.2', '>= 3.2.4'
-
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'webdrivers'
