@@ -9,7 +9,7 @@ class ProductsController < ApplicationController
   end
 
   def scrape
-    url = 'https://www.lazada.com.ph/shop-laptops/?sort=pricedesc&service=OS&rating=5'
+    url = 'https://pcpartpicker.com/products/motherboard/'
     response = ProductsSpider.process(url)
     if response[:status] == :completed && response[:error].nil?
       flash.now[:notice] = 'Successfully scraped url'
@@ -69,7 +69,6 @@ class ProductsController < ApplicationController
   end
 
   private
-
   # Use callbacks to share common setup or constraints between actions.
   def set_product
     @product = Product.find(params[:id])
