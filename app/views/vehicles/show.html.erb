@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+  <tbody>
+    <% @vehicles.each do |vehicle| %>
+      <tr>
+        <td><%= vehicle.title %></td>
+        <td><%= vehicle.stock_type %></td>
+        <td><%= vehicle.exterior_color %></td>
+        <td><%= vehicle.interior_color %></td>
+        <td><%= vehicle.transmission %></td>
+        <td><%= vehicle.drivetrain %></td>
+        <td><%= vehicle.price %></td>
+        <td><%= vehicle.miles %></td>
+        <td><%= link_to 'Show', vehicle %></td>
+        <td><%= link_to 'Edit', edit_vehicle_path(vehicle) %></td>
+        <td><%= link_to 'Destroy', vehicle, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+
+<%= link_to 'Edit', edit_vehicle_path(@vehicle) %> |
+<%= link_to 'Back', vehicles_path %>

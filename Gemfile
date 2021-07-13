@@ -46,8 +46,9 @@ group :development do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-
-gem 'rexml', '~> 3.2', '>= 3.2.4'
 gem 'kimurai'
-gem 'webdrivers'
+gem 'open-uri'
+gem 'rexml', '~> 3.2', '>= 3.2.4'
+
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+gem 'webdrivers'
