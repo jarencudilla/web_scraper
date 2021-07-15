@@ -1,22 +1,17 @@
+require 'kimurai'
+require 'webdrivers'
+
 class Spider < Kimurai::Base
+  @name = ''
+  @start_urls = []
   @engine = :selenium_chrome
-  @start_urls = ["https://pcpartpicker.com/products/motherboard/"]
-
-  def parse(response, url:, data: {})
-    # Process request to `parse_product` method with `https://example.com/some_product` url:
-    request_to :parse_product, url: "https://pcpartpicker.com/products/motherboard/"
-  end
-
-  def parse_product(response, url:, data: {})
-    puts "From page https://pcpartpicker.com/products/motherboard/ !"
+  @config = {
+    user_agent: "Chrome/68.0.3440.84"
+  }
+  def self.process()
+    self.crawl!
   end
 end
-
-
-
-
-
-# product spider
 
 require 'kimurai'
 
