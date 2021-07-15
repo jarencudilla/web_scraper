@@ -5,6 +5,12 @@
 Hi, This is a personal project. A web scraping app tailored for Lazada and Shopee sites.
 This is in preparation for a price list website that I'm planning to build that is for the practical Filipino consumers.
 
+Currently building a sort of PC Part Picker site.
+
+Reference : 
+https://github.com/KyleTryon/PCPartPickerParser
+
+
 * Ruby version
 
 Ruby 3.0.1
