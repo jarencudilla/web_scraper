@@ -16,6 +16,13 @@ V3: Back to Lazada and Shopee scraping
     re doing the schema
     deleted migration files, models, starting with a new code
 
+Since we've finished our PC Builder App that scrapes products from Pangoly
+https://github.com/jarencudilla/pc-builder-app
+
+V3: Back to Lazada and Shopee scraping
+- removing unnecessary files
+- re doing the schema
+- deleted migration files, models, starting with a new code
 
 * Ruby version
 
