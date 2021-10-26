@@ -9,7 +9,7 @@ class ProductsController < ApplicationController
   end
 
   def scrape
-    url = 'https://pcpartpicker.com/products/motherboard/'
+    url = 'https://lazada.com.ph/'
     response = ProductsSpider.process(url)
     if response[:status] == :completed && response[:error].nil?
       flash.now[:notice] = 'Successfully scraped url'
